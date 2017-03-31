@@ -1,0 +1,16 @@
+services:
+    mdespeuilles.config:
+        class: Mdespeuilles\ConfigBundle\Services\Config
+        arguments: [ '@service_container' ]
+
+    mdespeuilles.twig.config:
+        class: Mdespeuilles\ConfigBundle\Services\Twig\Config
+        arguments: [ '@service_container' ]
+        tags:
+            - { name: twig.extension }
+
+    mdespeuilles.entity.config:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - Mdespeuilles\ConfigBundle\Entity\Config

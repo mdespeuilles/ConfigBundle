@@ -1,0 +1,9 @@
+easy_admin:
+    design:
+        menu:
+            - label: 'Config'
+              icon: 'cog'
+              entity: 'Config'
+    entities:
+        Config:
+            class: Mdespeuilles\ConfigBundle\Entity\Config
